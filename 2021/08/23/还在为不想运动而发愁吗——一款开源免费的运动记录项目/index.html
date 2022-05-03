@@ -1,0 +1,598 @@
+
+
+
+
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2">
+<meta name="theme-color" content="#FFF">
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon.png">
+
+<link rel="icon" type="image/ico" sizes="32x32" href="/images/favicon.ico">
+  <meta http-equiv="Cache-Control" content="no-transform">
+  <meta http-equiv="Cache-Control" content="no-siteapp">
+
+
+<link rel="alternate" type="application/rss+xml" title="星橙的笔记本" href="http://example.com/rss.xml" />
+<link rel="alternate" type="application/atom+xml" title="星橙的笔记本" href="http://example.com/atom.xml" />
+<link rel="alternate" type="application/json" title="星橙的笔记本" href="http://example.com/feed.json" />
+
+<link rel="stylesheet" href="//fonts.googleapis.com/css?family=Mulish:300,300italic,400,400italic,700,700italic%7CFredericka%20the%20Great:300,300italic,400,400italic,700,700italic%7CNoto%20Serif%20JP:300,300italic,400,400italic,700,700italic%7CNoto%20Serif%20SC:300,300italic,400,400italic,700,700italic%7CInconsolata:300,300italic,400,400italic,700,700italic&display=swap&subset=latin,latin-ext">
+
+<link rel="stylesheet" href="/css/app.css?v=0.2.5">
+
+  
+
+<link rel="canonical" href="http://example.com/2021/08/23/%E8%BF%98%E5%9C%A8%E4%B8%BA%E4%B8%8D%E6%83%B3%E8%BF%90%E5%8A%A8%E8%80%8C%E5%8F%91%E6%84%81%E5%90%97%E2%80%94%E2%80%94%E4%B8%80%E6%AC%BE%E5%BC%80%E6%BA%90%E5%85%8D%E8%B4%B9%E7%9A%84%E8%BF%90%E5%8A%A8%E8%AE%B0%E5%BD%95%E9%A1%B9%E7%9B%AE/">
+
+
+
+  <title>
+还在为不想运动而发愁吗——一款开源免费的运动记录项目 |
+Star ⭐ Orange = 星橙的笔记本 = 欢迎光临</title>
+<meta name="generator" content="Hexo 6.1.0"></head>
+<body itemscope itemtype="http://schema.org/WebPage">
+  <div id="loading">
+    <div class="cat">
+      <div class="body"></div>
+      <div class="head">
+        <div class="face"></div>
+      </div>
+      <div class="foot">
+        <div class="tummy-end"></div>
+        <div class="bottom"></div>
+        <div class="legs left"></div>
+        <div class="legs right"></div>
+      </div>
+      <div class="paw">
+        <div class="hands left"></div>
+        <div class="hands right"></div>
+      </div>
+    </div>
+  </div>
+  <div id="container">
+    <header id="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="inner">
+        <div id="brand">
+          <div class="pjax">
+          
+  <h1 itemprop="name headline">还在为不想运动而发愁吗——一款开源免费的运动记录项目
+  </h1>
+  
+<div class="meta">
+  <span class="item" title="创建时间：2021-08-23 10:42:14">
+    <span class="icon">
+      <i class="ic i-calendar"></i>
+    </span>
+    <span class="text">发表于</span>
+    <time itemprop="dateCreated datePublished" datetime="2021-08-23T10:42:14+08:00">2021-08-23</time>
+  </span>
+</div>
+
+
+          </div>
+        </div>
+        <nav id="nav">
+  <div class="inner">
+    <div class="toggle">
+      <div class="lines" aria-label="切换导航栏">
+        <span class="line"></span>
+        <span class="line"></span>
+        <span class="line"></span>
+      </div>
+    </div>
+    <ul class="menu">
+      <li class="item title"><a href="/" rel="start">Star ⭐ Orange</a></li>
+    </ul>
+    <ul class="right">
+      <li class="item theme">
+        <i class="ic i-sun"></i>
+      </li>
+      <li class="item search">
+        <i class="ic i-search"></i>
+      </li>
+    </ul>
+  </div>
+</nav>
+
+      </div>
+      <div id="imgs" class="pjax">
+        <ul>
+          <li class="item" data-background-image="https://tva4.sinaimg.cn/large/6833939bly1giclwuom7cj20zk0m8dvn.jpg"></li>
+          <li class="item" data-background-image="https://tva4.sinaimg.cn/large/6833939bly1gipetv6p75j20zk0m8x6p.jpg"></li>
+          <li class="item" data-background-image="https://tva4.sinaimg.cn/large/6833939bly1gipetfk5zwj20zk0m8e81.jpg"></li>
+          <li class="item" data-background-image="https://tva4.sinaimg.cn/large/6833939bly1gipeu1usa7j20zk0m8b29.jpg"></li>
+          <li class="item" data-background-image="https://tva4.sinaimg.cn/large/6833939bly1giph4wqtg4j20zk0m8x6p.jpg"></li>
+          <li class="item" data-background-image="https://tva4.sinaimg.cn/large/6833939bly1gicitspjpbj20zk0m81ky.jpg"></li>
+        </ul>
+      </div>
+    </header>
+    <div id="waves">
+      <svg class="waves" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 24 150 28" preserveAspectRatio="none" shape-rendering="auto">
+        <defs>
+          <path id="gentle-wave" d="M-160 44c30 0 58-18 88-18s 58 18 88 18 58-18 88-18 58 18 88 18 v44h-352z" />
+        </defs>
+        <g class="parallax">
+          <use xlink:href="#gentle-wave" x="48" y="0" />
+          <use xlink:href="#gentle-wave" x="48" y="3" />
+          <use xlink:href="#gentle-wave" x="48" y="5" />
+          <use xlink:href="#gentle-wave" x="48" y="7" />
+        </g>
+      </svg>
+    </div>
+    <main>
+      <div class="inner">
+        <div id="main" class="pjax">
+          
+  <div class="article wrap">
+    
+<div class="breadcrumb" itemscope itemtype="https://schema.org/BreadcrumbList">
+<i class="ic i-home"></i>
+<span><a href="/">首页</a></span>
+</div>
+
+    <article itemscope itemtype="http://schema.org/Article" class="post block" lang="zh-CN">
+  <link itemprop="mainEntityOfPage" href="http://example.com/2021/08/23/%E8%BF%98%E5%9C%A8%E4%B8%BA%E4%B8%8D%E6%83%B3%E8%BF%90%E5%8A%A8%E8%80%8C%E5%8F%91%E6%84%81%E5%90%97%E2%80%94%E2%80%94%E4%B8%80%E6%AC%BE%E5%BC%80%E6%BA%90%E5%85%8D%E8%B4%B9%E7%9A%84%E8%BF%90%E5%8A%A8%E8%AE%B0%E5%BD%95%E9%A1%B9%E7%9B%AE/">
+
+  <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+    <meta itemprop="image" content="/images/avatar.jpg">
+    <meta itemprop="name" content="星橙">
+    <meta itemprop="description" content="欢迎光临, 光锥之内，皆是命运">
+  </span>
+
+  <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+    <meta itemprop="name" content="星橙的笔记本">
+  </span>
+
+  <div class="body md" itemprop="articleBody">
+    
+
+    <h2 id="前言"><a class="anchor" href="#前言">#</a> 前言</h2>
+<p>现在信息日益增长、时间日益碎片化的时代，每个人都很难去坚持去一直认真做一件事情。</p>
+<p>就拿跑步来说，许多人都是三分钟热度，根本坚持不下来。许多程序员在电脑面前一坐就是一整天，很少去锻炼、跑步。</p>
+<p>对于这些人来说影响因素有很多，有无法坚持，有懒惰，也有的说没有一款好看的运动记录界面......</p>
+<p>现在，这些都不是借口了！我这里给大家带来了一款非常炫酷的运动记录界面，不仅可以自己欣赏，还可以把他发给别人，和大家一起共同见证你的跑步运动锻炼经历～</p>
+<p>那有人说，在向其他人展示的时候我只想展示历程，并不像展示轨迹，因为我很注重隐私，没关系！这个程序自带模糊处理功能！如果你不想公开数据，可以选择 strava 的模糊处理，或 private 仓库。</p>
+<h2 id="特性"><a class="anchor" href="#特性">#</a> 特性</h2>
+<ol>
+<li>GitHub Actions 管理自动同步跑步进程及自动生成新的页面</li>
+<li>Gatsby 生成的静态网页，速度快</li>
+<li>支持 Vercel (推荐) 和 GitHub Pages 自动部署</li>
+<li>React Hooks</li>
+<li>Mapbox 进行地图展示</li>
+<li>Nike 及 Runtastic (Adidas Run) 以及佳明（佳明中国）及 Keep 等，自动备份 gpx 数据，方便备份及上传到其它软件</li>
+</ol>
+<blockquote>
+<p>因为数据存在 gpx 和 data.db 中，理论上支持几个软件一起，你可以把之前各类 app 的数据都同步到这里（建议本地同步，之后 actions 选择正在用的 app）</p>
+</blockquote>
+<blockquote>
+<p>注：如果你不想公开数据，可以选择 strava 的模糊处理，或 private 仓库。</p>
+</blockquote>
+<h2 id="展示图"><a class="anchor" href="#展示图">#</a> 展示图</h2>
+<h3 id="gif"><a class="anchor" href="#gif">#</a> GIF</h3>
+<p><img data-src="https://pic.iczkj.com/pic/2021/08/23/b4915606aa03e.gif" alt="" /></p>
+<h3 id="地图彩蛋"><a class="anchor" href="#地图彩蛋">#</a> 地图彩蛋</h3>
+<p><img data-src="https://pic.iczkj.com/pic/2021/08/23/676926f15b7e2.png" alt="95644909-a31bcd80-0aec-11eb-9270-869b0a94f59f" /></p>
+<h3 id="工作原理"><a class="anchor" href="#工作原理">#</a> 工作原理</h3>
+<p><img data-src="https://pic.iczkj.com/pic/2021/08/23/193305726fa72.png" alt="105784027-e1ad9900-5fb2-11eb-9479-372be21482f1" /></p>
+<p>你说你看不懂工作原理？没关系！接下来手把手带你操作，让你也能拥有炫酷的个人运动记录页面。</p>
+<h2 id="安装步骤"><a class="anchor" href="#安装步骤">#</a> 安装步骤</h2>
+<h3 id="准备事项"><a class="anchor" href="#准备事项">#</a> 准备事项</h3>
+<p>首先，你要拥有一台云服务器，这里购买的是腾讯云的轻量应用服务器。专属优惠购买连接：<span class="exturl" data-url="aHR0cHM6Ly9jdXJsLnFjbG91ZC5jb20vMUkyazloN0Q=">轻量应用服务器 Lighthouse</span>。新老用户同享！</p>
+<p>新用户超大额优惠：<span class="exturl" data-url="aHR0cHM6Ly9jdXJsLnFjbG91ZC5jb20vV0NhUEtDcnY=">1 核 2G 一年仅需 74 元</span></p>
+<p><img data-src="https://pic.iczkj.com/pic/2021/08/23/6d437849a965e.jpeg" alt="img" /></p>
+<h3 id="镜像选择"><a class="anchor" href="#镜像选择">#</a> 镜像选择</h3>
+<p><img data-src="https://pic.iczkj.com/pic/2021/08/23/0ff06fe5b2f38.png" alt="image-20210823123945478" /></p>
+<p>购买之后等待初始化。</p>
+<p>初始化完成之后登录控制台。</p>
+<p><img data-src="https://pic.iczkj.com/pic/2021/08/23/0780958daae2d.png" alt="image-20210823155600163" /></p>
+<h3 id="环境配置"><a class="anchor" href="#环境配置">#</a> 环境配置</h3>
+<p>输入 <code>sudo /etc/init.d/bt default</code>  来查看默认登录账号和密码。</p>
+<p><img data-src="https://pic.iczkj.com/pic/2021/08/23/8b652597660e4.png" alt="image-20210823160842540" /></p>
+<p>然后在你的浏览器里面输入 <code>IP:8888/tencentcloud</code>  访问宝塔面板。</p>
+<p>这时你还要去防火墙开一下 8888 端口，不然服务器会拒绝你的访问。</p>
+<p><img data-src="https://pic.iczkj.com/pic/2021/08/23/c0c15f6e98436.png" alt="image-20210823161103474" /></p>
+<p>登录成功后会跳出提示框，点击安装</p>
+<p><img data-src="https://pic.iczkj.com/pic/2021/08/23/56c4fbb62d571.png" alt="image-20210823161655152" /></p>
+<p>等待一段时间过后安装成功。</p>
+<p>点击网站：</p>
+<p><img data-src="https://pic.iczkj.com/pic/2021/08/23/338a7e4b26b20.png" alt="image-20210823170220226" /></p>
+<p>点击添加站点：</p>
+<p><img data-src="https://pic.iczkj.com/pic/2021/08/23/43804a6dad61c.png" alt="image-20210823170349674" /></p>
+<p>按提示添加好个人域名等相关信息。</p>
+<p><img data-src="https://pic.iczkj.com/pic/2021/08/23/ceb2a74807803.png" alt="image-20210823170524141" /></p>
+<h3 id="项目安装"><a class="anchor" href="#项目安装">#</a> 项目安装</h3>
+<p>进入网站目录点击远程下载，输入仓库下载地址命令：</p>
+<p><code>https://github.com/yihong0618/running_page.git</code></p>
+<p><img data-src="https://pic.iczkj.com/pic/2021/08/23/526155377ff96.png" alt="image-20210823170809625" /></p>
+<p>然后在此页面点击打开终端。</p>
+<p>并依次输入下列命令。</p>
+<pre><code>pip3 install -r requirements.txt
+yarn install
+yarn develop
+</code></pre>
+<p>然后访问域名：8000 或者 <code>IP:8000</code>  访问即可。</p>
+<h2 id="替换-srcutilsconstjs-文件中的-mapbox-token"><a class="anchor" href="#替换-srcutilsconstjs-文件中的-mapbox-token">#</a> 替换  <code>src/utils/const.js</code>  文件中的 Mapbox token</h2>
+<blockquote>
+<p>建议有能力的同学把代码中的 Mapbox token 自己的 <span class="exturl" data-url="aHR0cHM6Ly93d3cubWFwYm94LmNvbS8=">Mapbox token</span></p>
+</blockquote>
+<pre><code>const MAPBOX_TOKEN =
+  'pk.eyJ1IjoieWlob25nMDYxOCIsImEiOiJja2J3M28xbG4wYzl0MzJxZm0ya2Fua2p2In0.PNKfkeQwYuyGOTT_x9BJ4Q';
+</code></pre>
+<p>如果你是海外用户请更改  <code>IS_CHINESE = false</code>  in  <code>src/utils/const.js</code></p>
+<h2 id="一些个性化选项"><a class="anchor" href="#一些个性化选项">#</a> 一些个性化选项</h2>
+<p>在仓库目录下找到  <code>gatsby-config.js</code> ，找到以下内容并修改成你自己想要的。</p>
+<pre><code>siteMetadata: &#123;
+  siteTitle: 'Running Page', #网站标题
+  siteUrl: 'https://yihong.run', #网站域名
+  logo: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQTtc69JxHNcmN1ETpMUX4dozAgAN6iPjWalQ&amp;usqp=CAU', #左上角LOGO
+  description: 'Personal site and blog',
+  navLinks: [
+    &#123;
+      name: 'Blog', #右上角导航名称
+      url: 'https://yihong.run/running', #右上角导航链接
+    &#125;,
+    &#123;
+      name: 'About',
+      url: 'https://github.com/yihong0618/running_page/blob/master/README-CN.md',
+    &#125;,
+  ],
+&#125;,
+</code></pre>
+<p>更多功能请参见官方文档：<span class="exturl" data-url="aHR0cHM6Ly9naXRodWIuY29tL3lpaG9uZzA2MTgvcnVubmluZ19wYWdlL2Jsb2IvbWFzdGVyL1JFQURNRS1DTi5tZCNnYXJtaW4tY24tJUU1JUE0JUE3JUU5JTk5JTg2JUU3JTk0JUE4JUU2JTg4JUI3JUU4JUFGJUI3JUU3JTk0JUE4JUU4JUJGJTk5JUU0JUI4JUFB">官方文档</span></p>
+<p><span class="exturl" data-url="aHR0cHM6Ly95aWhvbmcucnVuLw==">演示站点</span></p>
+<p>最后，快去运动并记录吧！并和你的朋友一起分享记录的快乐～</p>
+
+  </div>
+
+   <footer>
+
+    <div class="meta">
+  <span class="item">
+    <span class="icon">
+      <i class="ic i-calendar-check"></i>
+    </span>
+    <span class="text">更新于</span>
+    <time title="修改时间：2022-04-30 16:37:17" itemprop="dateModified" datetime="2022-04-30T16:37:17+08:00">2022-04-30</time>
+  </span>
+  <span id="2021/08/23/还在为不想运动而发愁吗——一款开源免费的运动记录项目/" class="item leancloud_visitors" data-flag-title="还在为不想运动而发愁吗——一款开源免费的运动记录项目" title="阅读次数">
+      <span class="icon">
+        <i class="ic i-eye"></i>
+      </span>
+      <span class="text">阅读次数</span>
+      <span class="leancloud-visitors-count"></span>
+      <span class="text">次</span>
+  </span>
+</div>
+
+      
+<div class="reward">
+  <button><i class="ic i-heartbeat"></i> 赞赏</button>
+  <p>请我喝[茶]~(￣▽￣)~*</p>
+  <div id="qr">
+      
+      <div>
+        <img data-src="/images/wechatpay.png" alt="星橙 微信支付">
+        <p>微信支付</p>
+      </div>
+      
+      <div>
+        <img data-src="/images/alipay.png" alt="星橙 支付宝">
+        <p>支付宝</p>
+      </div>
+      
+      <div>
+        <img data-src="/images/paypal.png" alt="星橙 QQ">
+        <p>QQ</p>
+      </div>
+  </div>
+</div>
+
+      
+
+<div id="copyright">
+<ul>
+  <li class="author">
+    <strong>本文作者： </strong>星橙 <i class="ic i-at"><em>@</em></i>星橙的笔记本
+  </li>
+  <li class="link">
+    <strong>本文链接：</strong>
+    <a href="http://example.com/2021/08/23/%E8%BF%98%E5%9C%A8%E4%B8%BA%E4%B8%8D%E6%83%B3%E8%BF%90%E5%8A%A8%E8%80%8C%E5%8F%91%E6%84%81%E5%90%97%E2%80%94%E2%80%94%E4%B8%80%E6%AC%BE%E5%BC%80%E6%BA%90%E5%85%8D%E8%B4%B9%E7%9A%84%E8%BF%90%E5%8A%A8%E8%AE%B0%E5%BD%95%E9%A1%B9%E7%9B%AE/" title="还在为不想运动而发愁吗——一款开源免费的运动记录项目">http://example.com/2021/08/23/还在为不想运动而发愁吗——一款开源免费的运动记录项目/</a>
+  </li>
+  <li class="license">
+    <strong>版权声明： </strong>本站所有文章除特别声明外，均采用 <span class="exturl" data-url="aHR0cHM6Ly9jcmVhdGl2ZWNvbW1vbnMub3JnL2xpY2Vuc2VzL2J5LW5jLXNhLzQuMC9kZWVkLnpo"><i class="ic i-creative-commons"><em>(CC)</em></i>BY-NC-SA</span> 许可协议。转载请注明出处！
+  </li>
+</ul>
+</div>
+
+  </footer>
+
+</article>
+
+  </div>
+  
+
+<div class="post-nav">
+    <div class="item left">
+      
+
+  <a href="/2021/08/20/%E9%9D%92%E9%BE%99%E9%9D%A2%E6%9D%BF%E5%92%8CNinja%E7%9A%84%E5%AE%89%E8%A3%85%E6%96%B9%E6%B3%95/" itemprop="url" rel="prev" data-background-image="https:&#x2F;&#x2F;tva4.sinaimg.cn&#x2F;mw690&#x2F;6833939bly1gicm0fdw5cj20zk0m8hdt.jpg" title="未命名">
+  <span class="type">上一篇</span>
+  <span class="category"><i class="ic i-flag"></i> </span>
+  <h3>未命名</h3>
+  </a>
+
+    </div>
+    <div class="item right">
+      
+
+  <a href="/2021/08/24/%E4%B8%80%E6%AC%BE%E9%9D%9E%E5%B8%B8%E9%80%82%E5%90%88%E4%BF%A1%E6%81%AF%E4%BC%A0%E9%80%92%E7%9A%84%E5%B7%A5%E5%85%B7%E2%80%94%E2%80%94PasteMe/" itemprop="url" rel="next" data-background-image="https:&#x2F;&#x2F;tva4.sinaimg.cn&#x2F;mw690&#x2F;6833939bly1gicm07ih54j20zk0m84qp.jpg" title="未命名">
+  <span class="type">下一篇</span>
+  <span class="category"><i class="ic i-flag"></i> </span>
+  <h3>未命名</h3>
+  </a>
+
+    </div>
+</div>
+
+  
+  <div class="wrap" id="comments"></div>
+
+
+        </div>
+        <div id="sidebar">
+          
+
+<div class="inner">
+
+  <div class="panels">
+    <div class="inner">
+      <div class="contents panel pjax" data-title="文章目录">
+          <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%89%8D%E8%A8%80"><span class="toc-number">1.</span> <span class="toc-text"> 前言</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E7%89%B9%E6%80%A7"><span class="toc-number">2.</span> <span class="toc-text"> 特性</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%B1%95%E7%A4%BA%E5%9B%BE"><span class="toc-number">3.</span> <span class="toc-text"> 展示图</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#gif"><span class="toc-number">3.1.</span> <span class="toc-text"> GIF</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%9C%B0%E5%9B%BE%E5%BD%A9%E8%9B%8B"><span class="toc-number">3.2.</span> <span class="toc-text"> 地图彩蛋</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%B7%A5%E4%BD%9C%E5%8E%9F%E7%90%86"><span class="toc-number">3.3.</span> <span class="toc-text"> 工作原理</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%AE%89%E8%A3%85%E6%AD%A5%E9%AA%A4"><span class="toc-number">4.</span> <span class="toc-text"> 安装步骤</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%87%86%E5%A4%87%E4%BA%8B%E9%A1%B9"><span class="toc-number">4.1.</span> <span class="toc-text"> 准备事项</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E9%95%9C%E5%83%8F%E9%80%89%E6%8B%A9"><span class="toc-number">4.2.</span> <span class="toc-text"> 镜像选择</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E7%8E%AF%E5%A2%83%E9%85%8D%E7%BD%AE"><span class="toc-number">4.3.</span> <span class="toc-text"> 环境配置</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E9%A1%B9%E7%9B%AE%E5%AE%89%E8%A3%85"><span class="toc-number">4.4.</span> <span class="toc-text"> 项目安装</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E6%9B%BF%E6%8D%A2-srcutilsconstjs-%E6%96%87%E4%BB%B6%E4%B8%AD%E7%9A%84-mapbox-token"><span class="toc-number">5.</span> <span class="toc-text"> 替换  src&#x2F;utils&#x2F;const.js  文件中的 Mapbox token</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E4%B8%80%E4%BA%9B%E4%B8%AA%E6%80%A7%E5%8C%96%E9%80%89%E9%A1%B9"><span class="toc-number">6.</span> <span class="toc-text"> 一些个性化选项</span></a></li></ol>
+      </div>
+      <div class="related panel pjax" data-title="系列文章">
+      </div>
+      <div class="overview panel" data-title="站点概览">
+        <div class="author" itemprop="author" itemscope itemtype="http://schema.org/Person">
+  <img class="image" itemprop="image" alt="星橙"
+      data-src="/images/avatar.jpg">
+  <p class="name" itemprop="name">星橙</p>
+  <div class="description" itemprop="description">光锥之内，皆是命运</div>
+</div>
+
+<nav class="state">
+    <div class="item posts">
+      <a href="/archives/">
+        <span class="count">15</span>
+        <span class="name">文章</span>
+      </a>
+    </div>
+</nav>
+
+<div class="social">
+</div>
+
+<ul class="menu">
+  
+    
+  <li class="item">
+    <a href="/" rel="section"><i class="ic i-home"></i>首页</a>
+  </li>
+
+    
+  <li class="item">
+    <a href="/about/" rel="section"><i class="ic i-user"></i>关于</a>
+  </li>
+
+        
+  <li class="item dropdown">
+      <a href="javascript:void(0);"><i class="ic i-feather"></i>文章</a>
+    <ul class="submenu">
+
+        
+  <li class="item">
+    <a href="/archives/" rel="section"><i class="ic i-list-alt"></i>归档</a>
+  </li>
+
+        
+  <li class="item">
+    <a href="/categories/" rel="section"><i class="ic i-th"></i>分类</a>
+  </li>
+
+        
+  <li class="item">
+    <a href="/tags/" rel="section"><i class="ic i-tags"></i>标签</a>
+  </li>
+
+  </ul>
+    
+  <li class="item">
+    <a href="/friends/" rel="section"><i class="ic i-heart"></i>朋友</a>
+  </li>
+
+
+</ul>
+
+      </div>
+    </div>
+  </div>
+
+  <ul id="quick">
+    <li class="prev pjax">
+        <a href="/2021/08/20/%E9%9D%92%E9%BE%99%E9%9D%A2%E6%9D%BF%E5%92%8CNinja%E7%9A%84%E5%AE%89%E8%A3%85%E6%96%B9%E6%B3%95/" rel="prev" title="上一篇"><i class="ic i-chevron-left"></i></a>
+    </li>
+    <li class="up"><i class="ic i-arrow-up"></i></li>
+    <li class="down"><i class="ic i-arrow-down"></i></li>
+    <li class="next pjax">
+        <a href="/2021/08/24/%E4%B8%80%E6%AC%BE%E9%9D%9E%E5%B8%B8%E9%80%82%E5%90%88%E4%BF%A1%E6%81%AF%E4%BC%A0%E9%80%92%E7%9A%84%E5%B7%A5%E5%85%B7%E2%80%94%E2%80%94PasteMe/" rel="next" title="下一篇"><i class="ic i-chevron-right"></i></a>
+    </li>
+    <li class="percent"></li>
+  </ul>
+</div>
+
+
+        </div>
+        <div class="dimmer"></div>
+      </div>
+    </main>
+    <footer id="footer">
+      <div class="inner">
+        <div class="widgets">
+          
+<div class="rpost pjax">
+  <h2>随机文章</h2>
+  <ul>
+      
+  <li class="item">
+    
+<div class="breadcrumb">
+</div>
+
+    <span><a href="/2021/08/23/%E8%BF%98%E5%9C%A8%E4%B8%BA%E4%B8%8D%E6%83%B3%E8%BF%90%E5%8A%A8%E8%80%8C%E5%8F%91%E6%84%81%E5%90%97%E2%80%94%E2%80%94%E4%B8%80%E6%AC%BE%E5%BC%80%E6%BA%90%E5%85%8D%E8%B4%B9%E7%9A%84%E8%BF%90%E5%8A%A8%E8%AE%B0%E5%BD%95%E9%A1%B9%E7%9B%AE/" title="还在为不想运动而发愁吗——一款开源免费的运动记录项目">还在为不想运动而发愁吗——一款开源免费的运动记录项目</a></span>
+  </li>
+
+      
+  <li class="item">
+    
+<div class="breadcrumb">
+</div>
+
+    <span><a href="/2021/09/24/%E8%89%AF%E5%BF%83%E4%BA%91%E5%85%8D%E8%B4%B9%E9%80%81%E8%BD%BB%E9%87%8F%E6%9C%8D%E5%8A%A1%E5%99%A8%E5%95%A6/" title="未命名">未命名</a></span>
+  </li>
+
+      
+  <li class="item">
+    
+<div class="breadcrumb">
+</div>
+
+    <span><a href="/2021/08/27/%E8%85%BE%E8%AE%AF%E4%BA%91%E8%81%8A%E5%A4%A9%E5%AE%A4Fiora/" title="未命名">未命名</a></span>
+  </li>
+
+      
+  <li class="item">
+    
+<div class="breadcrumb">
+</div>
+
+    <span><a href="/2022/04/30/DBApi/" title="利用LightHouse和LightDB实现零代码创建和管理API">利用LightHouse和LightDB实现零代码创建和管理API</a></span>
+  </li>
+
+      
+  <li class="item">
+    
+<div class="breadcrumb">
+</div>
+
+    <span><a href="/2021/09/04/%E4%B8%BA%E7%AE%80%E5%8E%86%E8%80%8C%E5%8F%91%E6%84%81%E5%90%97%EF%BC%8C%E6%9D%A5%E7%9C%8B%E7%9C%8B%E8%BF%99%E4%B8%AA%E5%85%8D%E8%B4%B9%E5%AE%9E%E7%94%A8%E7%9A%84%E5%B7%A5%E5%85%B7/" title="未命名">未命名</a></span>
+  </li>
+
+      
+  <li class="item">
+    
+<div class="breadcrumb">
+</div>
+
+    <span><a href="/2022/03/13/%E8%BD%BB%E9%87%8F%E6%B4%BB%E5%8A%A8%E5%A4%A7%E7%9B%98%E4%B9%B0%E6%9D%A5%E5%90%83%E7%81%B0%EF%BC%9F%E4%BD%A0%E5%BA%94%E8%AF%A5%E8%BF%99%E4%B9%88%E7%8E%A9/" title="未命名">未命名</a></span>
+  </li>
+
+      
+  <li class="item">
+    
+<div class="breadcrumb">
+</div>
+
+    <span><a href="/2021/07/14/%E5%88%A9%E7%94%A8%E8%85%BE%E8%AE%AF%E4%BA%91%E8%BD%BB%E9%87%8F%E6%90%AD%E5%BB%BA%E5%B1%9E%E4%BA%8E%E8%87%AA%E5%B7%B1%E7%9A%84%E5%B0%8F%E7%A8%8B%E5%BA%8F/" title="利用腾讯云轻量搭建属于自己的博客小程序">利用腾讯云轻量搭建属于自己的博客小程序</a></span>
+  </li>
+
+      
+  <li class="item">
+    
+<div class="breadcrumb">
+</div>
+
+    <span><a href="/2021/08/08/%E7%A2%8E%E7%89%87%E6%97%B6%E9%97%B4%E9%83%BD%E5%9C%A8%E5%88%B7%E6%89%8B%E6%9C%BA%EF%BC%9FRSSHub%E5%B8%A6%E4%BD%A0%E9%80%83%E5%87%BA%E4%BF%A1%E6%81%AF%E6%B4%AA%E6%B5%81%EF%BC%81/" title="未命名">未命名</a></span>
+  </li>
+
+      
+  <li class="item">
+    
+<div class="breadcrumb">
+</div>
+
+    <span><a href="/2021/08/16/%E8%87%AA%E5%AE%9A%E4%B9%89%E5%BC%80%E6%BA%90%20Piwigo%20%E7%9B%B8%E5%86%8C%E2%80%94%E2%80%94%E5%88%86%E4%BA%AB%E7%94%9F%E6%B4%BB%E3%80%81%E8%AE%B0%E5%BD%95%E6%BC%AB%E6%BC%AB%E4%BA%BA%E7%94%9F%E8%B7%AF%E4%B8%AD%E7%9A%84%E7%BE%8E%E5%A5%BD%E6%97%B6%E5%85%89%E5%92%8C%E6%84%9F%E5%8A%A8/" title="未命名">未命名</a></span>
+  </li>
+
+      
+  <li class="item">
+    
+<div class="breadcrumb">
+</div>
+
+    <span><a href="/2021/08/05/%E6%96%87%E4%BB%B6%E4%B8%80%E7%AB%99%E5%BC%8F%E7%AE%A1%E7%90%86%E2%80%94%E2%80%94%E8%85%BE%E8%AE%AF%E4%BA%91%E8%BD%BB%E9%87%8F%E6%90%AD%E8%BD%BDZFile/" title="未命名">未命名</a></span>
+  </li>
+
+  </ul>
+</div>
+<div>
+  <h2>最新评论</h2>
+  <ul class="leancloud-recent-comment"></ul>
+</div>
+
+        </div>
+        <div class="status">
+  <div class="copyright">
+    
+    &copy; 
+    <span itemprop="copyrightYear">2022</span>
+    <span class="with-love">
+      <i class="ic i-sakura rotate"></i>
+    </span>
+    <span class="author" itemprop="copyrightHolder">星橙 @ Star ⭐ Orange</span>
+  </div>
+  <div class="powered-by">
+    基于 <span class="exturl" data-url="aHR0cHM6Ly9oZXhvLmlv">Hexo</span> & Theme.<span class="exturl" data-url="aHR0cHM6Ly9naXRodWIuY29tL2FtZWhpbWUvaGV4by10aGVtZS1zaG9rYQ==">Shoka</span>
+  </div>
+</div>
+
+      </div>
+    </footer>
+  </div>
+<script data-config type="text/javascript">
+  var LOCAL = {
+    path: '2021/08/23/还在为不想运动而发愁吗——一款开源免费的运动记录项目/',
+    favicon: {
+      show: "（●´3｀●）やれやれだぜ",
+      hide: "(´Д｀)大変だ！"
+    },
+    search : {
+      placeholder: "文章搜索",
+      empty: "关于 「 ${query} 」，什么也没搜到",
+      stats: "${time} ms 内找到 ${hits} 条结果"
+    },
+    valine: true,fancybox: true,
+    copyright: '复制成功，转载请遵守 <i class="ic i-creative-commons"></i>BY-NC-SA 协议。',
+    ignores : [
+      function(uri) {
+        return uri.includes('#');
+      },
+      function(uri) {
+        return new RegExp(LOCAL.path+"$").test(uri);
+      }
+    ]
+  };
+</script>
+
+<script src="https://cdn.polyfill.io/v2/polyfill.js"></script>
+
+<script src="//cdn.jsdelivr.net/combine/npm/pace-js@1.0.2/pace.min.js,npm/pjax@0.2.8/pjax.min.js,npm/whatwg-fetch@3.4.0/dist/fetch.umd.min.js,npm/animejs@3.2.0/lib/anime.min.js,npm/algoliasearch@4/dist/algoliasearch-lite.umd.js,npm/instantsearch.js@4/dist/instantsearch.production.min.js,npm/lozad@1/dist/lozad.min.js,npm/quicklink@2/dist/quicklink.umd.js"></script>
+
+<script src="/js/app.js?v=0.2.5"></script>
+
+
+
+
+</body>
+</html>

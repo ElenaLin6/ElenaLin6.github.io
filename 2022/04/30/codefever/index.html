@@ -1,0 +1,723 @@
+
+
+
+
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2">
+<meta name="theme-color" content="#FFF">
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon.png">
+
+<link rel="icon" type="image/ico" sizes="32x32" href="/images/favicon.ico">
+  <meta http-equiv="Cache-Control" content="no-transform">
+  <meta http-equiv="Cache-Control" content="no-siteapp">
+
+
+<link rel="alternate" type="application/rss+xml" title="星橙的笔记本" href="http://example.com/rss.xml" />
+<link rel="alternate" type="application/atom+xml" title="星橙的笔记本" href="http://example.com/atom.xml" />
+<link rel="alternate" type="application/json" title="星橙的笔记本" href="http://example.com/feed.json" />
+
+<link rel="stylesheet" href="//fonts.googleapis.com/css?family=Mulish:300,300italic,400,400italic,700,700italic%7CFredericka%20the%20Great:300,300italic,400,400italic,700,700italic%7CNoto%20Serif%20JP:300,300italic,400,400italic,700,700italic%7CNoto%20Serif%20SC:300,300italic,400,400italic,700,700italic%7CInconsolata:300,300italic,400,400italic,700,700italic&display=swap&subset=latin,latin-ext">
+
+<link rel="stylesheet" href="/css/app.css?v=0.2.5">
+
+  
+
+<link rel="canonical" href="http://example.com/2022/04/30/codefever/">
+
+
+
+  <title>
+Code Fever 做专属于自己的开源Git代码托管服务 |
+Star ⭐ Orange = 星橙的笔记本 = 欢迎光临</title>
+<meta name="generator" content="Hexo 6.1.0"></head>
+<body itemscope itemtype="http://schema.org/WebPage">
+  <div id="loading">
+    <div class="cat">
+      <div class="body"></div>
+      <div class="head">
+        <div class="face"></div>
+      </div>
+      <div class="foot">
+        <div class="tummy-end"></div>
+        <div class="bottom"></div>
+        <div class="legs left"></div>
+        <div class="legs right"></div>
+      </div>
+      <div class="paw">
+        <div class="hands left"></div>
+        <div class="hands right"></div>
+      </div>
+    </div>
+  </div>
+  <div id="container">
+    <header id="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="inner">
+        <div id="brand">
+          <div class="pjax">
+          
+  <h1 itemprop="name headline">Code Fever 做专属于自己的开源Git代码托管服务
+  </h1>
+  
+<div class="meta">
+  <span class="item" title="创建时间：2022-04-30 16:05:19">
+    <span class="icon">
+      <i class="ic i-calendar"></i>
+    </span>
+    <span class="text">发表于</span>
+    <time itemprop="dateCreated datePublished" datetime="2022-04-30T16:05:19+08:00">2022-04-30</time>
+  </span>
+</div>
+
+
+          </div>
+        </div>
+        <nav id="nav">
+  <div class="inner">
+    <div class="toggle">
+      <div class="lines" aria-label="切换导航栏">
+        <span class="line"></span>
+        <span class="line"></span>
+        <span class="line"></span>
+      </div>
+    </div>
+    <ul class="menu">
+      <li class="item title"><a href="/" rel="start">Star ⭐ Orange</a></li>
+    </ul>
+    <ul class="right">
+      <li class="item theme">
+        <i class="ic i-sun"></i>
+      </li>
+      <li class="item search">
+        <i class="ic i-search"></i>
+      </li>
+    </ul>
+  </div>
+</nav>
+
+      </div>
+      <div id="imgs" class="pjax">
+        <ul>
+          <li class="item" data-background-image="https://tva4.sinaimg.cn/large/6833939bly1giclip4jbpj20zk0m87cv.jpg"></li>
+          <li class="item" data-background-image="https://tva4.sinaimg.cn/large/6833939bly1giclgi503lj20zk0m8hdt.jpg"></li>
+          <li class="item" data-background-image="https://tva4.sinaimg.cn/large/6833939bly1giph47e9vtj20zk0m8x6l.jpg"></li>
+          <li class="item" data-background-image="https://tva4.sinaimg.cn/large/6833939bly1giph4lm9i7j20zk0m84qp.jpg"></li>
+          <li class="item" data-background-image="https://tva4.sinaimg.cn/large/6833939bly1gipexbei4hj20zk0m8npd.jpg"></li>
+          <li class="item" data-background-image="https://tva4.sinaimg.cn/large/6833939bly1giciuja1j1j20zk0m8kjl.jpg"></li>
+        </ul>
+      </div>
+    </header>
+    <div id="waves">
+      <svg class="waves" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 24 150 28" preserveAspectRatio="none" shape-rendering="auto">
+        <defs>
+          <path id="gentle-wave" d="M-160 44c30 0 58-18 88-18s 58 18 88 18 58-18 88-18 58 18 88 18 v44h-352z" />
+        </defs>
+        <g class="parallax">
+          <use xlink:href="#gentle-wave" x="48" y="0" />
+          <use xlink:href="#gentle-wave" x="48" y="3" />
+          <use xlink:href="#gentle-wave" x="48" y="5" />
+          <use xlink:href="#gentle-wave" x="48" y="7" />
+        </g>
+      </svg>
+    </div>
+    <main>
+      <div class="inner">
+        <div id="main" class="pjax">
+          
+  <div class="article wrap">
+    
+<div class="breadcrumb" itemscope itemtype="https://schema.org/BreadcrumbList">
+<i class="ic i-home"></i>
+<span><a href="/">首页</a></span>
+</div>
+
+    <article itemscope itemtype="http://schema.org/Article" class="post block" lang="zh-CN">
+  <link itemprop="mainEntityOfPage" href="http://example.com/2022/04/30/codefever/">
+
+  <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+    <meta itemprop="image" content="/images/avatar.jpg">
+    <meta itemprop="name" content="星橙">
+    <meta itemprop="description" content="欢迎光临, 光锥之内，皆是命运">
+  </span>
+
+  <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+    <meta itemprop="name" content="星橙的笔记本">
+  </span>
+
+  <div class="body md" itemprop="articleBody">
+    
+
+    <h2 id="前言"><a class="anchor" href="#前言">#</a> 前言</h2>
+<p>最近因为学校项目的一些关系，在频繁的写和更改代码，代码这种重要的东西，自然是需要多多备份的，一但丢失，就再也找不回来了。所以一开始选用程序员们都知道的 GitHub 和 Gitee 做为备份仓库。</p>
+<p>不过使用一段时间后问题就来了，GitHub 的上传和拉取速度实在感人，对于我这种急性子的人来说，实在是难以忍受。而无论是 GitHub 还是 Gitee 呢，都不能无限制私人仓库，这就让人非常苦恼。毕竟自己要毕业的项目暂时不能随随便便公开，而且最重要的是分支比较多，这样我就需要多个仓库来存放代码，目前因此事已经苦恼多日。</p>
+<p>偶然听别人说可以自己搭建代码托管平台，于是打算动手实践。在网上浏览了一圈服务器之后发现真的好贵，而且环境的配置也非常困难。我在交流群里面询问小伙伴们有没有更好方案时，有一个小伙伴向我推荐轻量应用服务器，我随后便去了解了一下这个叫做轻量应用服务器的产品，发现他不仅环境配置简单，在安装系统时就有各式各样已经打包好的环境供用户选择，而且价格也是相当的亲民，于是当机立断开了一台来部署私有代码托管平台。</p>
+<p>我选的这个开源 Git 代码托管服务平台是 Code Fever，我也考虑过比较有名的 GitLab，但是他太吃内存了，我消费不起啊，而且对于我这种只想备份代码的个人来说，其实 Code Fever 就足够了。那么话不多说，让我们开始今天的教程吧～</p>
+<h2 id="code-fever"><a class="anchor" href="#code-fever">#</a> Code Fever</h2>
+<h3 id="功能特性"><a class="anchor" href="#功能特性">#</a> 功能特性</h3>
+<ul>
+<li>🆓 <strong>永久免费:</strong> 永久免费提供给大家使用，您无需担心付费</li>
+<li>❤️ <strong>完整开源:</strong> 毫无保留的完整开源，无任何编译或加密代码</li>
+<li>🥬 <strong>轻量安装:</strong> 极简设计风格，排除重度冗余的多余功能</li>
+<li>⚡️ <strong>性能高效:</strong> 速度极快，对服务器资源要求极低，1 核 CPU/1G 内存即可运行</li>
+<li>♾️ <strong>无限仓库:</strong> 没有任何仓库数量、使用数量的限制</li>
+<li>⌨️ <strong>代码对比:</strong> 支持提交代码的不同版本支持高亮显示对比</li>
+<li>🛤️ <strong>分支管理:</strong> 完整支持 Git 原生分支和 Tag，帮助更清晰的管理代码</li>
+<li>🙋‍♂️ <strong>合并请求（Merge Request）:</strong> 支持多人协作，让代码版本控制更顺畅</li>
+<li>🙅🏻‍♀️ <strong>分支保护:</strong> 分支保护功能让代码提交安全可控，代码 Review 更容易清晰</li>
+<li>👥 <strong>多人协作:</strong> 支持多人团队协作，并可以设置每个成员的角色和权限</li>
+<li>🔌 <strong>Webhook:</strong> 支持 Webhook 功能，可轻松和其他系统进行集成</li>
+<li>🖥️ <strong>管理后台:</strong> 支持超级管理员后台，可以让团队 leader 管理所有项目和用户信息</li>
+<li>💬 <strong>中英双语:</strong> 原生支持中文和英文两种语言</li>
+</ul>
+<h3 id="安装方法"><a class="anchor" href="#安装方法">#</a> 安装方法</h3>
+<p><code>CodeFever</code>  提供  <code>从零开始安装</code>  和  <code>Docker 镜像安装</code>  两种安装方式，可以根据自己的实际需要选择安装方式。</p>
+<h4 id="环境准备"><a class="anchor" href="#环境准备">#</a> 环境准备</h4>
+<p>0.<strong> 轻量应用服务器的选购</strong></p>
+<p>孟买现在半价特惠，大家如果想购买可以点击文末或者评论区链接。这里建议小白使用宝塔镜像，如果使用 centos 镜像可以看宝塔搭建教程。</p>
+<p><img data-src="https://ics.iczkj.com/pic/2022/04/18/752242921bca3.png" alt="image-20220418174616345" /></p>
+<p>1.<strong> 宝塔搭建</strong></p>
+<p><mark>此处插入宝塔搭建教程</mark></p>
+<h4 id="docker-镜像安装"><a class="anchor" href="#docker-镜像安装">#</a> Docker 镜像安装</h4>
+<p><strong>Docker 镜像说明</strong></p>
+<p><code>CodeFever Community 版本</code>  的  <code>Docker 镜像</code>  是从  <code>dockerhub</code>  上的  <code>centos:centos7.9.2009</code>  镜像开始按照 从零开始安装中的步骤进行构建，构建架构是  <code>x86_64 (amd64)</code>  如果有其他需求请自行构建镜像。</p>
+<p><strong>拉取镜像并启动</strong></p>
+<p>启动  <code>CodeFever Communiy 版本</code>  的  <code>Docker 镜像</code></p>
+<p>先登录宝塔面板的终端，输入下面的拉取镜像命令。</p>
+<pre><code>docker run -d --privileged=true --name codefever -p 80:80 -p 22:22 -it pgyer/codefever-community:latest /usr/sbin/init
+</code></pre>
+<p><img data-src="https://ics.iczkj.com/pic/2022/04/18/aaf71720f1d27.png" alt="image-20220418184608016" /></p>
+<ol>
+<li>服务启动后尝试访问  <code>http://127.0.0.1</code>  或  <code>http://&lt;server ip&gt;</code>  登录</li>
+<li>如果你希望使用  <code>22</code>  端口作为  <code>Git</code>  的  <code>SSH 协议</code> 端口，你需要在启动镜像前将宿主系统的  <code>SSH 服务</code>   <code>端口</code>  先修改成其他端口</li>
+<li>如果服务异常你可以登录 Shell 去人工维护，也可以直接重启容器重启服务。</li>
+<li>默认管理员用户:  <code>root@codefever.cn</code> , 密码:  <code>123456</code> 。登录后请修改密码并绑定 MFA 设备。</li>
+</ol>
+<p><img data-src="https://ics.iczkj.com/pic/2022/04/18/e1c8917803ecd.png" alt="image-20220418184701577" /></p>
+<h4 id="从零开始安装"><a class="anchor" href="#从零开始安装">#</a> 从零开始安装</h4>
+<ol start="0">
+<li><strong>安装前的说明</strong></li>
+</ol>
+<p>此安装步骤是  <code>从头开始安装</code>  步骤，举例的脚本适用于大部分  <code>Linux</code>  操作系统。</p>
+<p>本文以  <code>CentOS 7.6 Linux</code>  操作系统为例，不同操作系统可能会有不同差别，需要用户自行对应到相应操作。</p>
+<p>整个安装过程需要使用  <code>root</code>  操作系统用户来完成。</p>
+<blockquote>
+<p><code>步骤1</code>  -  <code>步骤8</code>  均为软件环境安装步骤。如果你的操作已经具备当前步骤的软件或环境，此步骤可以跳过。</p>
+</blockquote>
+<p>PS：小白推荐使用宝塔安装环境，可以略过下面环境安装，不愿意使用宝塔可以按下面步骤搭建环境。</p>
+<ol>
+<li>准备操作系统环境</li>
+</ol>
+<p>选择合适的  <code>Linux</code>  发行版本，推荐使用  <code>CentOS 7.x</code> 。</p>
+<ul>
+<li>执行编译安装时需要保证机器至少有  <code>1800 MB</code>  内存，如果内存不足  <code>1800 MB</code>  请临时添加交换分区使可用内存到达  <code>1800 MB</code> 。</li>
+</ul>
+<pre><code># 临时增加 1000 MB Swap 空间
+dd if=/dev/zero of=/root/swap bs=1024 count=1000000
+mkswap /root/swap
+swapon /root/swap
+</code></pre>
+<p>为了顺利的设置必要的软件环境，以下的软件包必须安装到系统上。</p>
+<pre><code># 安装基础软件包
+yum install -y sudo tcl tk gettext autoconf gcc cmake3 wget initscripts openssh-server crontabs mailx sendmail pcre pcre-devel libcurl libcurl-devel libxml2 libxml2-devel openssl openssl-devel sqlite sqlite-devel libpng libpng-devel libwebp libwebp-devel libjpeg libjpeg-devel libXpm libXpm-devel freetype freetype-devel oniguruma oniguruma-devel libyaml libyaml-devel
+</code></pre>
+<p>除此之外，你还需要安装  <code>libzip 1.7+</code>  库，需要去官网下载源码包解压后安装。</p>
+<p>下载地址: <span class="exturl" data-url="aHR0cHM6Ly9saWJ6aXAub3JnL2Rvd25sb2FkLw==">https://libzip.org/download/</span></p>
+<pre><code># 编译安装 libzip
+cd libzip-1.x.x
+mkdir build
+cd build
+cmake3 ../
+make &amp;&amp; make install
+export PKG_CONFIG_PATH=&quot;/usr/local/lib64/pkgconfig/:/usr/local/lib/pkgconfig/&quot;
+</code></pre>
+<ol start="2">
+<li>安装 nginx</li>
+</ol>
+<p>访问 <span class="exturl" data-url="aHR0cDovL25naW54Lm9yZy9lbi9kb3dubG9hZC5odG1s">http://nginx.org/en/download.html</span> 下载  <code>Nginx</code>  源码解压后编译并安装安装到  <code>/usr/local/nginx</code>  目录下:</p>
+<pre><code># 安装 nginx 到 /usr/local/nginx 目录
+cd nginx-1.x.x
+./configure --prefix=/usr/local/nginx
+make &amp;&amp; make install
+</code></pre>
+<ol start="3">
+<li>安装 PHP</li>
+</ol>
+<p>访问 <span class="exturl" data-url="aHR0cHM6Ly93d3cucGhwLm5ldC9kb3dubG9hZHM=">https://www.php.net/downloads</span> 下载  <code>PHP</code>  源码 (推荐  <code>7.4</code>  版本)，解压后编译并安装到  <code>/usr/local/php</code>  目录下</p>
+<blockquote>
+<p>配置检查过程可能会提示缺少某些软件包，需要根据配置检查过程提示自行安装后再重复配置检查过程</p>
+</blockquote>
+<pre><code># 安装 php 到 /usr/local/php 目录
+cd php-7.4.x
+./configure --prefix=/usr/local/php --with-config-file-path=/usr/local/php/etc --enable-fpm --enable-bcmath=shared --with-pdo_sqlite --with-gettext=shared --with-iconv --enable-ftp=shared --with-sqlite3 --enable-mbstring=shared --enable-sockets=shared --enable-soap=shared --with-openssl --with-zlib --with-curl=shared --enable-gd --with-freetype --with-jpeg --with-xpm --with-webp --with-mhash --enable-opcache --with-mysqli --without-pear --with-libdir=lib64 --with-zip --enable-mbstring --enable-pcntl
+make &amp;&amp; make install
+</code></pre>
+<blockquote>
+<p><code>Codefever</code>  还需要以下  <code>PHP 扩展</code>  才能良好工作，按照下面地址下载并安装</p>
+</blockquote>
+<ul>
+<li>yaml : <span class="exturl" data-url="aHR0cHM6Ly9wZWNsLnBocC5uZXQvcGFja2FnZS95YW1s">https://pecl.php.net/package/yaml</span></li>
+</ul>
+<pre><code># 安装 php yaml 扩展
+cd yaml-2.x.x
+/usr/local/php/bin/phpize
+./configure --with-php-config=/usr/local/php/bin/php-config
+make &amp;&amp; make install
+</code></pre>
+<ol start="4">
+<li>安装 Git</li>
+</ol>
+<p>访问 <span class="exturl" data-url="aHR0cHM6Ly9taXJyb3JzLmVkZ2Uua2VybmVsLm9yZy9wdWIvc29mdHdhcmUvc2NtL2dpdC8=">https://mirrors.edge.kernel.org/pub/software/scm/git/</span> 下载  <code>Git v2</code>  的源码，解压后编译并安装到  <code>/usr/local/git</code>  目录下</p>
+<pre><code># 安装 git v2 到 /usr/local/git 目录下
+cd git-2.x.x
+./configure --prefix=/usr/local/git
+make &amp;&amp; make install
+</code></pre>
+<p>连接可执行二进制文件到  <code>/usr/local/bin</code>  目录下</p>
+<pre><code># 链接可执行文件
+ln -s /usr/local/git/bin/git /usr/local/bin/
+</code></pre>
+<ol start="5">
+<li>安装 Go (无需编译，二进制安装)</li>
+</ol>
+<p>访问 <span class="exturl" data-url="aHR0cHM6Ly9nb2xhbmcuZ29vZ2xlLmNuL2RsLw==">https://golang.google.cn/dl/</span> 下载 1.16 版本以上的二进制安装包解压后复制到  <code>/usr/local/go</code>  目录下</p>
+<pre><code># 复制到 /usr/local	目录下
+cp -R go /usr/local
+</code></pre>
+<p>连接可执行二进制文件到  <code>/usr/local/bin</code>  目录下</p>
+<pre><code># 链接可执行文件
+ln -s /usr/local/go/bin/go /usr/local/bin/go
+ln -s /usr/local/go/bin/gofmt /usr/local/bin/gofmt
+</code></pre>
+<ol start="6">
+<li>安装 NodeJS (无需编译，二进制安装，开发或修改前端页面时使用)</li>
+</ol>
+<p>访问 <span class="exturl" data-url="aHR0cHM6Ly9ub2RlanMub3JnL2VuL2Rvd25sb2FkLw==">https://nodejs.org/en/download/</span> 下载  <code>16.10</code>  以上  <code>LTS</code>  版本二进制安装包解压后复制到  <code>/usr/local/node</code>  目录下</p>
+<pre><code># 复制到 /usr/local	目录下
+cp -R node-v16.x.x-os-arch /usr/local/node
+</code></pre>
+<p>连接可执行二进制文件到  <code>/usr/local/bin/</code>  目录下</p>
+<pre><code># 链接可执行文件
+ln -s /usr/local/node/bin/node /usr/local/bin/node
+ln -s /usr/local/node/bin/npm /usr/local/bin/npm
+ln -s /usr/local/node/bin/npx /usr/local/bin/npx
+ln -s /usr/local/node/bin/corepack /usr/local/bin/corepack
+</code></pre>
+<ol start="7">
+<li>安装 Yarn</li>
+</ol>
+<p>访问 <span class="exturl" data-url="aHR0cHM6Ly95YXJucGtnLmNvbS9nZXR0aW5nLXN0YXJ0ZWQvaW5zdGFsbA==">https://yarnpkg.com/getting-started/install</span> 按照页面指导安装  <code>Yarn</code></p>
+<pre><code># NodeJS v16.10 以上打开 corepack 即可使用 Yarn
+corepack enable
+</code></pre>
+<ol start="8">
+<li>安装 MySQL/MariaDB (无需编译，镜像源安装)</li>
+</ol>
+<p>MySQL 不需要单独安装，直接使用系统自带软件工具安装软件包即可。需要安装于  <code>MySQL 5.7</code>  以上的相当版本。</p>
+<p>去官网按照指导使用镜像源安装二进制版本 (<span class="exturl" data-url="aHR0cHM6Ly9tYXJpYWRiLm9yZy9kb3dubG9hZC8/dD1yZXBvLWNvbmZpZw==">https://mariadb.org/download/?t=repo-config</span> 选择  <code>xTom GmbH - San Jose</code>  镜像)，如果你使用使用云数据库，你可以跳过此步骤。</p>
+<p>运行  <code>service mariadb start</code>  或  <code>service mysql start</code>  启动服务后使用  <code>mysql_secure_installation</code>  或  <code>mariadb-secure-installation</code>  初始化数据库</p>
+<p>* 当设置  <code>root</code>  密码为  <code>123456</code>  时，不需要在下一步中修改  <code>env.yaml</code>  中的数据库设置。</p>
+<p>如果你使用  <code>MySQL 5.7</code>  版本数据，需要修改  <code>SQL MODE</code>  变量，否则创建数据库时会报错，如果使用  <code>MariaDB</code>  可以忽略此选项。</p>
+<pre><code>set global sql_mode='ONLY_FULL_GROUP_BY,STRICT_TRANS_TABLES,ERROR_FOR_DIVISION_BY_ZERO,NO_AUTO_CREATE_USER,NO_ENGINE_SUBSTITUTION';
+</code></pre>
+<ol start="9">
+<li>下载源码并安装</li>
+</ol>
+<p>去  <code>Github</code>  上下载源码并安装  <code>/data/www/codefever-comminuty</code>  目录下</p>
+<pre><code>mkdir -p /data/www
+cd /data/www
+git clone https://github.com/PGYER/codefever.git codefever-community
+cd codefever-community
+</code></pre>
+<ul>
+<li>如果  <code>Github</code>  的  <code>HTTP</code>  服务访问速度较慢，可以尝试使用  <code>SSH</code>  服务（需要提前设置  <code>SSH Key</code> ）</li>
+</ul>
+<pre><code>git clone ssh://git@github.com:PGYER/codefever.git codefever-community
+</code></pre>
+<p>编译  <code>HTTP</code>  网关服务</p>
+<pre><code>cd /data/www/codefever-community/http-gateway
+export GO111MODULE=off
+export GOPROXY=https://mirrors.aliyun.com/goproxy
+go get gopkg.in/yaml.v2
+go build main.go
+</code></pre>
+<p>编译  <code>SSH</code>  网关服务</p>
+<pre><code>cd /data/www/codefever-community/ssh-gateway/shell
+export GO111MODULE=off
+export GOPROXY=https://mirrors.aliyun.com/goproxy
+go get gopkg.in/yaml.v2
+go build main.go
+</code></pre>
+<p>执行安装脚本</p>
+<pre><code>cd /data/www/codefever-community/misc
+sh ./install.sh
+</code></pre>
+<p>按照  <code>install.sh</code>  运行后提示修改  <code>env.yaml</code>  文件设置参数</p>
+<p>运行数据库迁移脚本</p>
+<pre><code>cd /data/www/codefever-community/misc
+sh ./create_db.sh
+</code></pre>
+<p>如果你不需要对 Code Fever 进行代码上的修改，或者将来不计划运行单元测试，可以删除测试数据</p>
+<pre><code>cd /data/www/codefever-community/misc
+sh ./remove_test_data.sh
+</code></pre>
+<p>为服务开启  <code>chkconfig</code>  以开机自动运行</p>
+<pre><code>chkconfig mariadb on # 或 chkconfig mysql on (根据安装的数据库类型, 如果使用云服务忽略此项目)
+chkconfig sendmail on
+chkconfig nginx on
+chkconfig php-fpm on
+chkconfig codefever on
+chkconfig crond on
+</code></pre>
+<p>尝试访问  <code>http://127.0.0.1</code>  或  <code>http://&lt;server ip&gt;</code>  来登录</p>
+<p>默认管理员用户:  <code>root@codefever.cn</code> , 密码:  <code>123456</code> 。登录后请修改密码并绑定 MFA 设备。</p>
+<h3 id="界面预览"><a class="anchor" href="#界面预览">#</a> 界面预览</h3>
+<p><img data-src="https://ics.iczkj.com/pic/2022/04/18/aaf71720f1d27.png" alt="image-20220418184608016" /></p>
+<p><img data-src="https://ics.iczkj.com/pic/2022/04/18/aeea87c075d3b.png" alt="image-20220418184842684" /></p>
+<p><img data-src="https://ics.iczkj.com/pic/2022/04/18/45e0f2405079b.png" alt="image-20220418184908216" /></p>
+<p><img data-src="https://ics.iczkj.com/pic/2022/04/18/549e79a172487.png" alt="image-20220418184931591" /></p>
+<h3 id="写在最后"><a class="anchor" href="#写在最后">#</a> 写在最后</h3>
+<p>其实这款平台非常好用，非常轻量，适合个人使用，美中不足的是不能从其他平台仓库直接克隆项目到本地服务端，只能通过自己手动上传，希望作者以后能增加这个功能。</p>
+
+  </div>
+
+   <footer>
+
+    <div class="meta">
+  <span class="item">
+    <span class="icon">
+      <i class="ic i-calendar-check"></i>
+    </span>
+    <span class="text">更新于</span>
+    <time title="修改时间：2022-05-01 08:45:35" itemprop="dateModified" datetime="2022-05-01T08:45:35+08:00">2022-05-01</time>
+  </span>
+  <span id="2022/04/30/codefever/" class="item leancloud_visitors" data-flag-title="Code Fever 做专属于自己的开源Git代码托管服务" title="阅读次数">
+      <span class="icon">
+        <i class="ic i-eye"></i>
+      </span>
+      <span class="text">阅读次数</span>
+      <span class="leancloud-visitors-count"></span>
+      <span class="text">次</span>
+  </span>
+</div>
+
+      
+<div class="reward">
+  <button><i class="ic i-heartbeat"></i> 赞赏</button>
+  <p>请我喝[茶]~(￣▽￣)~*</p>
+  <div id="qr">
+      
+      <div>
+        <img data-src="/images/wechatpay.png" alt="星橙 微信支付">
+        <p>微信支付</p>
+      </div>
+      
+      <div>
+        <img data-src="/images/alipay.png" alt="星橙 支付宝">
+        <p>支付宝</p>
+      </div>
+      
+      <div>
+        <img data-src="/images/paypal.png" alt="星橙 QQ">
+        <p>QQ</p>
+      </div>
+  </div>
+</div>
+
+      
+
+<div id="copyright">
+<ul>
+  <li class="author">
+    <strong>本文作者： </strong>星橙 <i class="ic i-at"><em>@</em></i>星橙的笔记本
+  </li>
+  <li class="link">
+    <strong>本文链接：</strong>
+    <a href="http://example.com/2022/04/30/codefever/" title="Code Fever 做专属于自己的开源Git代码托管服务">http://example.com/2022/04/30/codefever/</a>
+  </li>
+  <li class="license">
+    <strong>版权声明： </strong>本站所有文章除特别声明外，均采用 <span class="exturl" data-url="aHR0cHM6Ly9jcmVhdGl2ZWNvbW1vbnMub3JnL2xpY2Vuc2VzL2J5LW5jLXNhLzQuMC9kZWVkLnpo"><i class="ic i-creative-commons"><em>(CC)</em></i>BY-NC-SA</span> 许可协议。转载请注明出处！
+  </li>
+</ul>
+</div>
+
+  </footer>
+
+</article>
+
+  </div>
+  
+
+<div class="post-nav">
+    <div class="item left">
+      
+
+  <a href="/2022/04/30/DBApi/" itemprop="url" rel="prev" data-background-image="https:&#x2F;&#x2F;tva4.sinaimg.cn&#x2F;mw690&#x2F;6833939bly1giclh3brzpj20zk0m8ann.jpg" title="利用LightHouse和LightDB实现零代码创建和管理API">
+  <span class="type">上一篇</span>
+  <span class="category"><i class="ic i-flag"></i> </span>
+  <h3>利用LightHouse和LightDB实现零代码创建和管理API</h3>
+  </a>
+
+    </div>
+    <div class="item right">
+    </div>
+</div>
+
+  
+  <div class="wrap" id="comments"></div>
+
+
+        </div>
+        <div id="sidebar">
+          
+
+<div class="inner">
+
+  <div class="panels">
+    <div class="inner">
+      <div class="contents panel pjax" data-title="文章目录">
+          <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%89%8D%E8%A8%80"><span class="toc-number">1.</span> <span class="toc-text"> 前言</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#code-fever"><span class="toc-number">2.</span> <span class="toc-text"> Code Fever</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%8A%9F%E8%83%BD%E7%89%B9%E6%80%A7"><span class="toc-number">2.1.</span> <span class="toc-text"> 功能特性</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%AE%89%E8%A3%85%E6%96%B9%E6%B3%95"><span class="toc-number">2.2.</span> <span class="toc-text"> 安装方法</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#%E7%8E%AF%E5%A2%83%E5%87%86%E5%A4%87"><span class="toc-number">2.2.1.</span> <span class="toc-text"> 环境准备</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#docker-%E9%95%9C%E5%83%8F%E5%AE%89%E8%A3%85"><span class="toc-number">2.2.2.</span> <span class="toc-text"> Docker 镜像安装</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E4%BB%8E%E9%9B%B6%E5%BC%80%E5%A7%8B%E5%AE%89%E8%A3%85"><span class="toc-number">2.2.3.</span> <span class="toc-text"> 从零开始安装</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E7%95%8C%E9%9D%A2%E9%A2%84%E8%A7%88"><span class="toc-number">2.3.</span> <span class="toc-text"> 界面预览</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%86%99%E5%9C%A8%E6%9C%80%E5%90%8E"><span class="toc-number">2.4.</span> <span class="toc-text"> 写在最后</span></a></li></ol></li></ol>
+      </div>
+      <div class="related panel pjax" data-title="系列文章">
+      </div>
+      <div class="overview panel" data-title="站点概览">
+        <div class="author" itemprop="author" itemscope itemtype="http://schema.org/Person">
+  <img class="image" itemprop="image" alt="星橙"
+      data-src="/images/avatar.jpg">
+  <p class="name" itemprop="name">星橙</p>
+  <div class="description" itemprop="description">光锥之内，皆是命运</div>
+</div>
+
+<nav class="state">
+    <div class="item posts">
+      <a href="/archives/">
+        <span class="count">15</span>
+        <span class="name">文章</span>
+      </a>
+    </div>
+</nav>
+
+<div class="social">
+</div>
+
+<ul class="menu">
+  
+    
+  <li class="item">
+    <a href="/" rel="section"><i class="ic i-home"></i>首页</a>
+  </li>
+
+    
+  <li class="item">
+    <a href="/about/" rel="section"><i class="ic i-user"></i>关于</a>
+  </li>
+
+        
+  <li class="item dropdown">
+      <a href="javascript:void(0);"><i class="ic i-feather"></i>文章</a>
+    <ul class="submenu">
+
+        
+  <li class="item">
+    <a href="/archives/" rel="section"><i class="ic i-list-alt"></i>归档</a>
+  </li>
+
+        
+  <li class="item">
+    <a href="/categories/" rel="section"><i class="ic i-th"></i>分类</a>
+  </li>
+
+        
+  <li class="item">
+    <a href="/tags/" rel="section"><i class="ic i-tags"></i>标签</a>
+  </li>
+
+  </ul>
+    
+  <li class="item">
+    <a href="/friends/" rel="section"><i class="ic i-heart"></i>朋友</a>
+  </li>
+
+
+</ul>
+
+      </div>
+    </div>
+  </div>
+
+  <ul id="quick">
+    <li class="prev pjax">
+    </li>
+    <li class="up"><i class="ic i-arrow-up"></i></li>
+    <li class="down"><i class="ic i-arrow-down"></i></li>
+    <li class="next pjax">
+    </li>
+    <li class="percent"></li>
+  </ul>
+</div>
+
+
+        </div>
+        <div class="dimmer"></div>
+      </div>
+    </main>
+    <footer id="footer">
+      <div class="inner">
+        <div class="widgets">
+          
+<div class="rpost pjax">
+  <h2>随机文章</h2>
+  <ul>
+      
+  <li class="item">
+    
+<div class="breadcrumb">
+</div>
+
+    <span><a href="/2021/09/24/%E8%89%AF%E5%BF%83%E4%BA%91%E5%85%8D%E8%B4%B9%E9%80%81%E8%BD%BB%E9%87%8F%E6%9C%8D%E5%8A%A1%E5%99%A8%E5%95%A6/" title="未命名">未命名</a></span>
+  </li>
+
+      
+  <li class="item">
+    
+<div class="breadcrumb">
+</div>
+
+    <span><a href="/2021/08/24/%E4%B8%80%E6%AC%BE%E9%9D%9E%E5%B8%B8%E9%80%82%E5%90%88%E4%BF%A1%E6%81%AF%E4%BC%A0%E9%80%92%E7%9A%84%E5%B7%A5%E5%85%B7%E2%80%94%E2%80%94PasteMe/" title="未命名">未命名</a></span>
+  </li>
+
+      
+  <li class="item">
+    
+<div class="breadcrumb">
+</div>
+
+    <span><a href="/2022/04/30/DBApi/" title="利用LightHouse和LightDB实现零代码创建和管理API">利用LightHouse和LightDB实现零代码创建和管理API</a></span>
+  </li>
+
+      
+  <li class="item">
+    
+<div class="breadcrumb">
+</div>
+
+    <span><a href="/2022/04/30/codefever/" title="Code Fever 做专属于自己的开源Git代码托管服务">Code Fever 做专属于自己的开源Git代码托管服务</a></span>
+  </li>
+
+      
+  <li class="item">
+    
+<div class="breadcrumb">
+</div>
+
+    <span><a href="/2021/07/14/%E5%88%A9%E7%94%A8%E8%85%BE%E8%AE%AF%E4%BA%91%E8%BD%BB%E9%87%8F%E6%90%AD%E5%BB%BA%E5%B1%9E%E4%BA%8E%E8%87%AA%E5%B7%B1%E7%9A%84%E5%B0%8F%E7%A8%8B%E5%BA%8F/" title="利用腾讯云轻量搭建属于自己的博客小程序">利用腾讯云轻量搭建属于自己的博客小程序</a></span>
+  </li>
+
+      
+  <li class="item">
+    
+<div class="breadcrumb">
+</div>
+
+    <span><a href="/2021/08/16/%E8%87%AA%E5%AE%9A%E4%B9%89%E5%BC%80%E6%BA%90%20Piwigo%20%E7%9B%B8%E5%86%8C%E2%80%94%E2%80%94%E5%88%86%E4%BA%AB%E7%94%9F%E6%B4%BB%E3%80%81%E8%AE%B0%E5%BD%95%E6%BC%AB%E6%BC%AB%E4%BA%BA%E7%94%9F%E8%B7%AF%E4%B8%AD%E7%9A%84%E7%BE%8E%E5%A5%BD%E6%97%B6%E5%85%89%E5%92%8C%E6%84%9F%E5%8A%A8/" title="未命名">未命名</a></span>
+  </li>
+
+      
+  <li class="item">
+    
+<div class="breadcrumb">
+</div>
+
+    <span><a href="/2021/07/16/%E8%85%BE%E8%AE%AF%E4%BA%91%E8%BD%BB%E9%87%8F%E5%BF%AB%E9%80%9F%E6%90%AD%E5%BB%BA%E4%B8%AA%E4%BA%BA%E7%BD%91%E7%9B%98/" title="未命名">未命名</a></span>
+  </li>
+
+      
+  <li class="item">
+    
+<div class="breadcrumb">
+</div>
+
+    <span><a href="/2021/08/08/%E7%A2%8E%E7%89%87%E6%97%B6%E9%97%B4%E9%83%BD%E5%9C%A8%E5%88%B7%E6%89%8B%E6%9C%BA%EF%BC%9FRSSHub%E5%B8%A6%E4%BD%A0%E9%80%83%E5%87%BA%E4%BF%A1%E6%81%AF%E6%B4%AA%E6%B5%81%EF%BC%81/" title="未命名">未命名</a></span>
+  </li>
+
+      
+  <li class="item">
+    
+<div class="breadcrumb">
+</div>
+
+    <span><a href="/2021/08/27/%E8%85%BE%E8%AE%AF%E4%BA%91%E8%81%8A%E5%A4%A9%E5%AE%A4Fiora/" title="未命名">未命名</a></span>
+  </li>
+
+      
+  <li class="item">
+    
+<div class="breadcrumb">
+</div>
+
+    <span><a href="/2021/09/04/%E4%B8%BA%E7%AE%80%E5%8E%86%E8%80%8C%E5%8F%91%E6%84%81%E5%90%97%EF%BC%8C%E6%9D%A5%E7%9C%8B%E7%9C%8B%E8%BF%99%E4%B8%AA%E5%85%8D%E8%B4%B9%E5%AE%9E%E7%94%A8%E7%9A%84%E5%B7%A5%E5%85%B7/" title="未命名">未命名</a></span>
+  </li>
+
+  </ul>
+</div>
+<div>
+  <h2>最新评论</h2>
+  <ul class="leancloud-recent-comment"></ul>
+</div>
+
+        </div>
+        <div class="status">
+  <div class="copyright">
+    
+    &copy; 
+    <span itemprop="copyrightYear">2022</span>
+    <span class="with-love">
+      <i class="ic i-sakura rotate"></i>
+    </span>
+    <span class="author" itemprop="copyrightHolder">星橙 @ Star ⭐ Orange</span>
+  </div>
+  <div class="powered-by">
+    基于 <span class="exturl" data-url="aHR0cHM6Ly9oZXhvLmlv">Hexo</span> & Theme.<span class="exturl" data-url="aHR0cHM6Ly9naXRodWIuY29tL2FtZWhpbWUvaGV4by10aGVtZS1zaG9rYQ==">Shoka</span>
+  </div>
+</div>
+
+      </div>
+    </footer>
+  </div>
+<script data-config type="text/javascript">
+  var LOCAL = {
+    path: '2022/04/30/codefever/',
+    favicon: {
+      show: "（●´3｀●）やれやれだぜ",
+      hide: "(´Д｀)大変だ！"
+    },
+    search : {
+      placeholder: "文章搜索",
+      empty: "关于 「 ${query} 」，什么也没搜到",
+      stats: "${time} ms 内找到 ${hits} 条结果"
+    },
+    valine: true,fancybox: true,
+    copyright: '复制成功，转载请遵守 <i class="ic i-creative-commons"></i>BY-NC-SA 协议。',
+    ignores : [
+      function(uri) {
+        return uri.includes('#');
+      },
+      function(uri) {
+        return new RegExp(LOCAL.path+"$").test(uri);
+      }
+    ]
+  };
+</script>
+
+<script src="https://cdn.polyfill.io/v2/polyfill.js"></script>
+
+<script src="//cdn.jsdelivr.net/combine/npm/pace-js@1.0.2/pace.min.js,npm/pjax@0.2.8/pjax.min.js,npm/whatwg-fetch@3.4.0/dist/fetch.umd.min.js,npm/animejs@3.2.0/lib/anime.min.js,npm/algoliasearch@4/dist/algoliasearch-lite.umd.js,npm/instantsearch.js@4/dist/instantsearch.production.min.js,npm/lozad@1/dist/lozad.min.js,npm/quicklink@2/dist/quicklink.umd.js"></script>
+
+<script src="/js/app.js?v=0.2.5"></script>
+
+
+
+
+</body>
+</html>
